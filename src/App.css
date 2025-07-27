@@ -35,3 +35,9 @@
 .cta-button:hover {
   box-shadow: 0 0 0 6px rgba(255, 225, 128, 0.4), 0 8px 20px rgba(0, 0, 0, 0.4);
 }
+
+/* Additional starfield overlay blocks */
+.bg-starfield {
+  background-image: radial-gradient(rgba(255, 225, 128, 0.6) 1px, transparent 1px);
+  background-size: 4px 4px;
+}

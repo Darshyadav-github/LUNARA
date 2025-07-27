@@ -13,7 +13,10 @@ function App() {
   const decreaseQty = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
   return (
-    <div className="app min-h-screen font-sans text-white">
+    <div className="app min-h-screen font-sans text-white relative overflow-hidden">
+      {/* Decorative starfield overlays */}
+      <div className="pointer-events-none absolute -top-10 -right-10 w-72 h-72 bg-starfield opacity-[0.07]" />
+      <div className="pointer-events-none absolute bottom-0 -left-20 w-72 h-72 bg-starfield opacity-[0.07]" />
       {/* Sticky navigation bar */}
       <header className="sticky top-0 z-10 w-full backdrop-blur bg-black/40 flex items-center justify-between px-6 py-4">
         <div className="flex items-center space-x-2 text-[#F7F6EC] font-serif text-xl font-bold">
@@ -54,7 +57,7 @@ function App() {
           <img
             src="https://source.unsplash.com/800x800?headphones"
             alt="Quantum Headset"
-            className="rounded-xl shadow-2xl mb-4"
+            className="rounded-xl shadow-2xl mb-4 ring-1 ring-[#ffe180]/50"
           />
           {/* Thumbnail gallery */}
           <div className="flex gap-2 overflow-x-auto">
@@ -121,7 +124,13 @@ function App() {
           </div>
 
           <button className="cta-button w-full">Add to Cart</button>
-          <div className="flex items-center text-sm text-gray-400 mt-4">
+          <div className="flex space-x-4 mt-4 text-gray-400">
+            {/* Replace with real social icons */}
+            <a href="#" className="hover:text-[#ffe180]">♥</a>
+            <a href="#" className="hover:text-[#ffe180]">↗</a>
+            <a href="#" className="hover:text-[#ffe180]">✉</a>
+          </div>
+          <div className="flex items-center text-sm text-[#ffe180] mt-4 border border-[#ffe180] rounded-full px-3 py-1">
             <span className="mr-2">🔒</span> Secure Checkout
           </div>
         </div>
