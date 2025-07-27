@@ -1,38 +1,37 @@
-.App {
+/*
+  Custom styles for LUNARA product page.
+  Tailwind handles most layout; these rules add cosmic touches.
+*/
+.app {
+  position: relative;
   text-align: center;
+  overflow-x: hidden;
+  background-color: #000;
 }
 
-.App-logo {
-  height: 40vmin;
+/* Subtle starfield overlay */
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.1;
   pointer-events: none;
+  z-index: -1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Luxury CTA button */
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  transition: box-shadow 0.3s ease;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cta-button:hover {
+  box-shadow: 0 0 0 6px rgba(255, 225, 128, 0.4), 0 8px 20px rgba(0, 0, 0, 0.4);
 }
