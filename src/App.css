@@ -1,38 +1,95 @@
-.App {
+/* Global styles for the LUNARA landing page */
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
+.hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2rem;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1650&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.hero h1 {
+  position: relative;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 4rem);
+  color: #ffffff;
+}
+
+.hero p {
+  position: relative;
+  max-width: 600px;
+  color: #cccccc;
+  margin: 1rem 0 2rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  position: relative;
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .cta-button {
+    padding: 0.5rem 1.5rem;
   }
 }
